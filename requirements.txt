@@ -1,0 +1,7 @@
+pandas
+spacy
+gensim
+pyLDAvis
+matplotlib
+nltk
+google-play-scraper
