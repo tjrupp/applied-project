@@ -10,7 +10,7 @@ library(pacman)
 #if not installed, install packages, if installed just load
 p_load("stringr", "jsonlite", "dplyr", "RSQLite", "readr", "sentimentr",
          "forcats", "reshape2", "RColorBrewer", "psych", "ggcorrplot",
-         "mblm", "apa")
+         "mblm", "apa", "writexl")
 
 #create folder for scraping app details
 dir.create("app_JSON")
