@@ -12,9 +12,12 @@ p_load("stringr", "jsonlite", "dplyr", "RSQLite", "readr", "sentimentr",
          "forcats", "reshape2", "RColorBrewer", "psych", "ggcorrplot",
          "mblm", "apa", "writexl")
 
+#only use the following lines if you did not download the 
+#folders 
+
 #create folder for scraping app details
-dir.create("app_JSON")
+#dir.create("app_JSON")
 
 #create folder for scraping app reviews
-dir.create("reviews_JSON")
+#dir.create("reviews_JSON")
 
