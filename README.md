@@ -6,6 +6,8 @@ Is Update-frequency and content
 connected top App success?
 An Analysis of productivity Apps in Google’s Play Store**
 
+
+
 Step 1: Clone git repository
 
 Step 2: Download database and JSON-Files (Running it on your own will take
