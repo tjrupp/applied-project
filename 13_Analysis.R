@@ -65,7 +65,8 @@ hist(data$update_frequency, main = "Histogram of Update Frequency",
      xlab = "Update Frequency (with outliers)")
 
 #boxplot to find update_frequency outliers
-boxplot(data$update_frequency)
+boxplot(data$update_frequency, main = "Update Frequency", 
+        xlab = "Boxplot")
 
 #find outlier app names
 data %>% 
@@ -91,7 +92,8 @@ plot(data3$update_frequency, data3$mean_reviews)
 hist(data3$update_frequency, main = "Histogram of Update Frequency", 
      xlab = "Update Frequency (no outliers)")
 hist(scale(data3$update_frequency))
-boxplot(data3$update_frequency)
+boxplot(data3$update_frequency, main = "Update Frequency", 
+        xlab = "Update Frequency (no outliers)")
 
 #get numeric values of installs
 data3$installs_total <- data3$installs
@@ -132,7 +134,10 @@ summary(model.k)
 #plot model
 plot(installs_total ~ update_frequency,
      data = data3,
-     pch  = 16)
+     pch  = 16,
+     main = "Siegel non-parametric regression",
+     ylab = "No. Installs",
+     xlab = "Update frequency \n (mean days between updates)")
 
 #add regression line
 abline(model.k,
@@ -148,7 +153,10 @@ summary(model.k2)
 
 plot(installs_numeric ~ update_frequency,
      data = data3,
-     pch  = 16)
+     pch  = 16,
+     main = "Siegel non-parametric regression",
+     ylab = "No. Installs",
+     xlab = "Update frequency \n (mean days between updates)")
 
 abline(model.k2,
        col="blue",
@@ -168,10 +176,11 @@ data %>%
     panel.grid.major.y = element_blank(),
     panel.border = element_blank(),
     axis.ticks.y = element_blank()
-  )
+  ) +
+  ylab("Mean rating reviews")
 
 #plot mean ratings of reviews in red and mean ratings of all ratings in blue
-data %>%
+p <- data %>%
   group_by(app) %>%
   mutate(min_mean = min(c(mean_store, mean_reviews))) %>%
   mutate(max_mean = max(c(mean_store, mean_reviews))) %>%
@@ -193,8 +202,11 @@ data %>%
     panel.grid.major.y = element_blank(),
     panel.border = element_blank(),
     axis.ticks.y = element_blank()
-  ) 
+  ) +
+  ylab("Red: Mean rating reviews \n Blue: Mean rating store")
+p
 
+ggsave("plot_ratings.pdf", p, device = "pdf")
 
 #create subset of ratings for comparing groups
 ratings <- data.frame(data$mean_reviews)
@@ -243,8 +255,8 @@ data %>%
   geom_bar(stat = "identity", fill = "#f68060", alpha = .6, width = .4) +
   coord_flip() +
   xlab("") +
-  theme_bw()
-
+  theme_bw() -> p
+p
 #disconnect
 dbDisconnect(con)
 
