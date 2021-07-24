@@ -157,7 +157,7 @@ coherence_lda = coherence_model_lda.get_coherence()
 print('\nCoherence: ', coherence_lda)
 
 vis = pyLDAvis.gensim_models.prepare(lda_model, corpus, id2word)
-pyLDAvis.save_html(vis, 'lda_reviews3.html')
+pyLDAvis.save_html(vis, 'lda_review.html')
 
 
 #function to compute multiple LDAs with varying topic numbers
