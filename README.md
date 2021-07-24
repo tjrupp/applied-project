@@ -13,7 +13,7 @@ Step 1: Clone git repository
 Step 2: Download database and JSON-Files (Running it on your own will take
 a long time)
 
-    https://fileshare.uibk.ac.at/u/d/fe781cc27cfc4db2af11/
+    https://fileshare.uibk.ac.at/d/12bc1fe752bc4dcf9d52/
     
 Step 3:
 To install needed python modules run
