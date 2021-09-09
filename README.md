@@ -1,12 +1,12 @@
-**Applied Project 
+Applied Project 
 
-Tim Jonathan Rupp
+Final Project of Minor Digital Science of University of Innsbruck
 
 Is Update-frequency and content 
 connected top App success?
-An Analysis of productivity Apps in Google’s Play Store**
+An Analysis of productivity Apps in Google’s Play Store
 
-
+Run files in order:
 
 Step 1: Clone git repository
 
